@@ -17,6 +17,7 @@
 
     --font-family-main: 'Quicksand', 'Open Sans', sans-serif;
     --font-family-sec: 'Tourney', cursive;
+    
 }
 
 html {
@@ -167,9 +168,7 @@ nav ol li a::before {
         width: 1.5rem;
         height: 1.5rem;
     }
-  }
-
-
+}
 
 .menu-toggle.active {
     transform: rotate(-180deg);
@@ -214,7 +213,6 @@ nav ol li a::before {
     pointer-events: none;
 }
 
-
 .nav-responsive-left {
     display: none;
     position: relative;
@@ -245,8 +243,6 @@ nav ol li a::before {
     margin-top: 4.5rem;
     list-style: none;
 }
-
-
 
 .nav-link a {
     color: var(--font-main-color);
@@ -322,13 +318,13 @@ nav ol li a::before {
         margin-right: 5rem;
         z-index: 999;
     }
-  }
+}
 
-  @media only screen and (max-width: 550px) {
+@media only screen and (max-width: 550px) {
     .dark-mode-full-screen {
         margin-right: 60px;
     }
-  }
+}
 
 .checkbox {
     opacity: 0;
@@ -354,7 +350,7 @@ nav ol li a::before {
         width: 42px;
         height: 22px;
     }
-  }
+}
 
 .ball {
     width: 20px;
@@ -372,7 +368,7 @@ nav ol li a::before {
         width: 19px;
         height: 18px;
     }
-  }
+}
 
 .checkbox:checked + .checkbox-label .ball {
     transform: translate(25px);
@@ -382,7 +378,7 @@ nav ol li a::before {
     .checkbox:checked + .checkbox-label .ball {
         transform: translate(20px);
     }
-  }
+}
 
 .fa-moon-o {
     color: var(--flair-color);
@@ -501,7 +497,6 @@ main {
 }
 
 
-
 /**************************************************************** */
 /**** Home */
 
@@ -532,8 +527,6 @@ main {
     font-family: var(--font-family-sec);
     color: var(--flair-color);
 }
-
-
 
 
 
@@ -582,10 +575,16 @@ main {
 .about-me p {
     display: flex;
     margin: 0px auto 0px auto;
-    width: 90%;
+    width: 75%;
     font-size: 2.5vmin;
     line-height: 1.5rem;
-    font-family: 'Balsamiq Sans', cursive;
+    font-family: var(--font-family-main);
+}
+
+@media only screen and (max-width: 999px) {
+    .about-me p {
+       width: 90%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -630,7 +629,6 @@ main {
     font-family: var(--font-family-main);
     letter-spacing: 1px;
 }
- 
 
 #projects h1::before {
     content: "03. ";
@@ -654,7 +652,7 @@ main {
     display: flex;
     font-family: var(--font-family-main); 
     color: var(--font-family-main);
-    text-shadow: 0px 0px px var(--font-main-color);
+    text-shadow: 0px 0px 0px var(--font-main-color);
     letter-spacing: .1rem;
     font-size: 2.5vmin;
     margin-left: 5.5rem;
@@ -662,17 +660,23 @@ main {
 
 @media only screen and (max-width: 950px) {
     .slide-container h2 {
-        margin-top: 2.5rem;
-        font-size: 3.5vmin;
+        margin-top: .5rem;
     }
 }
 
 @media only screen and (max-width: 750px) {
     .slide-container h2 {
         margin-left: 1rem;  
+        font-size: 2.5vmin;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .slide-container h2 {
+        margin-left: 1rem;  
         font-size: 4vmin;
     }
 }
+
 
 .project-container {
     display: flex;
@@ -691,15 +695,23 @@ main {
     scroll-snap-align: center;
     display: flex;
     flex-direction: column;
-    min-width: 30vw;
+    min-width: 35vw;
     box-shadow: rgba(0, 0, 0, .2) 0px 0px 10px 1px;   
     flex: 1 1 40vw;
     margin: 1.5rem;
     padding: .1rem;
 }
+.project:hover {
+    box-shadow: rgba(0, 0, 0, .2) 12px 12px 15px 12px;  
+    transition: ease .4s;
+}
 
 .project-code-pen {
     min-width: 35vw;
+    justify-content: inherit;
+}
+.project-code-pen:hover {
+    box-shadow: rgba(0, 0, 0, .2) 0px 0px 10px 1px;  
 }
 
 @media only screen and (max-width: 950px) {
@@ -719,19 +731,22 @@ main {
 
 .project-image {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .project-image img {
     display: block;
     width: 100%;  
-    height: auto;
+    height: 100%;
+    object-fit: cover;
 }
 
 
 .project-text {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: .5rem;
     color: var(--font-main-color);
 }
 
@@ -746,18 +761,11 @@ main {
     text-transform: uppercase;
     margin-bottom: .25rem;
     letter-spacing: .1rem;
+    font-weight: 500;
 }
-
-.project-text p {
-    height: 8vh;
-    font-size: 1rem;
-
-    display: none;
-}
-
-@media only screen and (max-width: 450px) {
-    .project-text p {
-        display: none;
+@media only screen and (max-width: 750px) {
+    .project-title {
+        font-size: .9rem;
     }
 }
 
@@ -766,10 +774,13 @@ main {
     flex-wrap: wrap;
     margin: .5rem 0px;
     font-size: .8rem;
-  /*  text-decoration: overline underline 2px var(--flair-color);   */
     letter-spacing: .15rem;
-    font-family: var(--font-family-sec);
-  /*  letter-spacing: .2rem;  */
+    font-family: var(--font-family-main);
+}
+@media only screen and (max-width: 750px) {
+    .project-lang {
+        font-size: .6rem;
+    }
 }
 
 .project-lang li {
@@ -778,7 +789,6 @@ main {
 }
 
 .project-links {
-  /*  padding-top: 2rem;    */
     margin-top: auto;
     padding-top: 1.5rem;
     display: flex;
@@ -791,6 +801,11 @@ main {
     letter-spacing: .15rem;
     cursor: pointer;
     text-decoration: none;
+}
+@media only screen and (max-width: 750px) {
+    .project-links a {
+        font-size: .8rem;
+    }
 }
 
 .project-links a:hover {
@@ -826,8 +841,6 @@ main {
     width: 75vw;
     margin-bottom: 5rem;
 }
-
-
 
 #contact h1 {
     margin: 0rem 0px 0px -.5rem;
@@ -917,19 +930,14 @@ main {
     width: 90%;
     height: 2rem;
     margin-left: 10px;
-    
     border: none;
     cursor: pointer;
     color: var(--bg-color);
     background: var(--bg-color);
-
     border: 1px solid var(--font-main-color);
-
     overflow: hidden;
     transition: all .3s ease-in;
 }
-
-
 
 .alt-send-button {
     width: 90%;
@@ -1029,7 +1037,6 @@ main {
     width: 60px;
     line-height: 60px;
     border-radius: 50%;
-
     background-color: var(--bg-color);
     cursor: pointer;
     transition: all .2s ease-in;
