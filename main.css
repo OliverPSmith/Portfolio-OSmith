@@ -29,6 +29,7 @@ body {
     min-height: 100%;
     background-color: var(--bg-color);
     color: var(--font-main-color);
+    transition: .8s;
 }
 
 
